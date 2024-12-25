@@ -1,4 +1,5 @@
 import { AboutSection } from "@/sections/about";
+import { ContactSection } from "@/sections/contact";
 import { Header } from "@/sections/header";
 import { HeroSection } from "@/sections/hero";
 import { ProjectsSection } from "@/sections/projects";
@@ -14,6 +15,7 @@ export default function Home() {
       <TapeSection />
       <TestimonialsSection />
       <AboutSection />
+      <ContactSection />
     </div>
   );
 }
