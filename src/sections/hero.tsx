@@ -7,6 +7,8 @@ import grainImage from "@/assets/images/grain.jpg";
 import memojiImage from "@/assets/images/memoji-computer.png";
 import HeroOrbit from "@/components/hero-orbit";
 
+const OBJECT_SPIN_DURATION = 10;
+
 export const HeroSection = () => {
   return (
     <section className="relative z-0 overflow-x-clip py-32 md:py-48 lg:py-60">
@@ -20,35 +22,85 @@ export const HeroSection = () => {
         <div className="hero-ring size-[1020px]"></div>
         <div className="hero-ring size-[1220px]"></div>
 
-        <HeroOrbit size={800} rotation={-72}>
-          <StarIcon className="size-28 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={550} rotation={20}>
-          <StarIcon className="size-12 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={590} rotation={98}>
-          <StarIcon className="size-8 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={430} rotation={-14}>
+        <HeroOrbit
+          size={430}
+          rotation={-14}
+          orbitSpinDuration={30}
+          objectSpinDuration={OBJECT_SPIN_DURATION}
+        >
           <SparkleIcon className="size-8 text-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={440} rotation={79}>
+        <HeroOrbit
+          size={440}
+          rotation={79}
+          orbitSpinDuration={32}
+          objectSpinDuration={OBJECT_SPIN_DURATION}
+        >
           <SparkleIcon className="size-5 text-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={530} rotation={179}>
+        <HeroOrbit
+          size={520}
+          rotation={-41}
+          orbitSpinDuration={34}
+          objectSpinDuration={OBJECT_SPIN_DURATION}
+        >
+          <div className="size-2 rounded-full bg-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={530}
+          rotation={179}
+          orbitSpinDuration={36}
+          objectSpinDuration={OBJECT_SPIN_DURATION}
+        >
           <SparkleIcon className="size-10 text-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={710} rotation={144}>
+        <HeroOrbit
+          size={550}
+          rotation={20}
+          orbitSpinDuration={38}
+          objectSpinDuration={OBJECT_SPIN_DURATION}
+        >
+          <StarIcon className="size-12 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={590}
+          rotation={98}
+          orbitSpinDuration={40}
+          objectSpinDuration={OBJECT_SPIN_DURATION}
+        >
+          <StarIcon className="size-8 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={650}
+          rotation={-5}
+          orbitSpinDuration={42}
+          objectSpinDuration={OBJECT_SPIN_DURATION}
+        >
+          <div className="size-2 rounded-full bg-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit
+          size={710}
+          rotation={144}
+          orbitSpinDuration={44}
+          objectSpinDuration={OBJECT_SPIN_DURATION}
+        >
           <SparkleIcon className="size-14 text-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={720} rotation={85}>
+        <HeroOrbit
+          size={720}
+          rotation={85}
+          orbitSpinDuration={46}
+          objectSpinDuration={OBJECT_SPIN_DURATION}
+        >
           <div className="size-3 rounded-full bg-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={520} rotation={-41}>
-          <div className="size-2 rounded-full bg-emerald-300/20" />
-        </HeroOrbit>
-        <HeroOrbit size={650} rotation={-5}>
-          <div className="size-2 rounded-full bg-emerald-300/20" />
+        <HeroOrbit
+          size={800}
+          rotation={-72}
+          orbitSpinDuration={48}
+          objectSpinDuration={OBJECT_SPIN_DURATION}
+        >
+          <StarIcon className="size-28 text-emerald-300" />
         </HeroOrbit>
       </div>
 
@@ -60,7 +112,9 @@ export const HeroSection = () => {
             alt="Person peeking from behind a laptop"
           />
           <div className="inline-flex items-center gap-4 rounded-lg border border-gray-800 bg-gray-950 px-4 py-1.5">
-            <div className="size-2.5 rounded-full bg-green-400"></div>
+            <div className="relative z-0 size-2.5 rounded-full bg-green-400">
+              <div className="animate-ping-large absolute inset-0 -z-10 rounded-full bg-green-500"></div>
+            </div>
             <p className="text-sm font-medium">Available for new projects</p>
           </div>
         </div>
