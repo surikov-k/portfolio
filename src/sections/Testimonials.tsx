@@ -52,24 +52,29 @@ export const TestimonialsSection = () => {
         about my work."
         />
 
-        <div className="mt-16 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] lg:mt-24">
-          <div className="flex flex-none gap-8">
-            {testimonials.map(({ name, position, text, avatar }) => (
-              <Card key={name} className="max-w-xs p-6 md:max-w-md md:p-8">
-                <div className="flex items-center gap-4">
-                  <div className="inline-flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gray-700">
-                    <Image src={avatar} alt={name} className="max-h-full" />
+        <div className="-my-4 mt-12 flex overflow-x-clip py-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] lg:mt-20">
+          <div className="animate-move-left flex flex-none gap-8 pr-8 [animation-duration:90s] hover:[animation-play-state:paused]">
+            {[...testimonials, ...testimonials].map(
+              ({ name, position, text, avatar }, index) => (
+                <Card
+                  key={name + index}
+                  className="max-w-xs p-6 transition duration-300 hover:-rotate-3 md:max-w-md md:p-8"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="inline-flex size-14 flex-shrink-0 items-center justify-center rounded-full bg-gray-700">
+                      <Image src={avatar} alt={name} className="max-h-full" />
+                    </div>
+                    <div className="">
+                      <p className="font-semibold">{name}</p>
+                      <p className="text-sm text-white/40">{position}</p>
+                    </div>
                   </div>
-                  <div className="">
-                    <p className="font-semibold">{name}</p>
-                    <p className="text-sm text-white/40">{position}</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm text-white md:mt-6 md:text-base">
-                  {text}
-                </p>
-              </Card>
-            ))}
+                  <p className="mt-4 text-sm text-white md:mt-6 md:text-base">
+                    {text}
+                  </p>
+                </Card>
+              )
+            )}
           </div>
         </div>
       </div>
