@@ -40,10 +40,19 @@ const config: Config = {
             transform: "translateX(-50%)",
           },
         },
+        "move-right": {
+          "0%": {
+            transform: "translateX(-50%)",
+          },
+          "100%": {
+            transform: "translateX(0)",
+          },
+        },
       },
       animation: {
         "ping-large": "ping-large 1s cubic-bezier(0, 0, 0.2, 1) infinite",
         "move-left": "move-left 15s linear infinite",
+        "move-right": "move-right 15s linear infinite",
       },
     },
   },

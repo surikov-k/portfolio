@@ -19,7 +19,7 @@ const links = [
   },
 ];
 
-export const Footer = () => {
+export const FooterSection = () => {
   return (
     <footer className="relative -z-10 overflow-x-clip">
       <div className="-x-10 absolute bottom-0 left-1/2 h-[400px] w-[1600px] -translate-x-1/2 bg-emerald-300/30 [mask-image:radial-gradient(50%_50%_at_bottom_center,black,transparent)]"></div>

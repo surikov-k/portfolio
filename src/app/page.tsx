@@ -1,11 +1,11 @@
-import { AboutSection } from "@/sections/about";
-import { ContactSection } from "@/sections/contact";
-import { Footer } from "@/sections/footer";
+import { AboutSection } from "@/sections/about-section";
+import { ContactSection } from "@/sections/contact-section";
+import { FooterSection } from "@/sections/footer-section";
 import { Header } from "@/sections/header";
-import { HeroSection } from "@/sections/hero";
-import { ProjectsSection } from "@/sections/projects";
-import { TapeSection } from "@/sections/tape";
-import { TestimonialsSection } from "@/sections/testimonials";
+import { HeroSection } from "@/sections/hero-section";
+import { ProjectsSection } from "@/sections/projects-section";
+import { TapeSection } from "@/sections/tape-section";
+import { TestimonialsSection } from "@/sections/testimonials-section";
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <TestimonialsSection />
       <AboutSection />
       <ContactSection />
-      <Footer />
+      <FooterSection />
     </div>
   );
 }

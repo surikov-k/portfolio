@@ -1,4 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import { useRef } from "react";
+
+import { motion } from "framer-motion";
 
 import ChromeIcon from "@/assets/icons/chrome.svg";
 import CSSIcon from "@/assets/icons/css3.svg";
@@ -87,6 +92,8 @@ const interests = [
 ];
 
 export const AboutSection = () => {
+  const dragContainerRef = useRef<HTMLDivElement>(null);
+
   return (
     <section className="py-20 lg:py-28">
       <div className="container">
@@ -112,11 +119,15 @@ export const AboutSection = () => {
               description="Explore the technologies and tools I use to craft exceptional
                 digital experiences."
             />
-            <ToolboxItems items={toolboxItems} className="mt-6 md:mt-8" />
+            <ToolboxItems
+              items={toolboxItems}
+              className="mt-6 md:mt-8"
+              itemsWrapperClassName="animate-move-left [animation-duration:30s] hover:[animation-play-state:paused]"
+            />
             <ToolboxItems
               items={toolboxItems}
               className="mt-6"
-              itemsWrapperClassName="-translate-x-1/2"
+              itemsWrapperClassName="animate-move-right [animation-duration:20s] hover:[animation-play-state:paused]"
             />
           </Card>
           <Card className="flex h-[320px] flex-col p-0 md:col-span-3 lg:col-span-4">
@@ -124,16 +135,21 @@ export const AboutSection = () => {
               title="Beyond the Code"
               description="Explore my interests and hobbies beyond the digital realm."
             />
-            <div className="relative mt-6 flex-1 md:mt-8">
+            <div
+              ref={dragContainerRef}
+              className="relative mt-6 flex-1 md:mt-8"
+            >
               {interests.map(({ title, emoji, left, top }) => (
-                <div
+                <motion.div
                   key={title}
                   className="absolute inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 px-6 py-1.5"
                   style={{ left, top }}
+                  drag
+                  dragConstraints={dragContainerRef}
                 >
                   <span className="font-medium text-gray-950">{title}</span>
                   <span className="">{emoji}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </Card>
@@ -143,7 +159,9 @@ export const AboutSection = () => {
               alt="map"
               className="h-full object-cover object-left-top"
             />
-            <div className="absolute left-1/2 top-1/2 flex size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 outline outline-2 -outline-offset-2 outline-gray-950/30">
+            <div className="absolute left-1/2 top-1/2 flex size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full outline outline-2 -outline-offset-2 outline-gray-950/30">
+              <div className="absolute inset-0 -z-20 animate-ping rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 [animation-duration:3s]"></div>
+              <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400"></div>
               <Image src={smileMemoji} alt="smile" className="size-20" />
             </div>
           </Card>

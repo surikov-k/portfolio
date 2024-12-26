@@ -31,9 +31,9 @@ export default function ToolboxItems({
           itemsWrapperClassName
         )}
       >
-        {items.map(({ title, iconType }) => (
+        {[...items, ...items].map(({ title, iconType }, index) => (
           <div
-            key={title}
+            key={title + index}
             className="inline-flex items-center gap-4 rounded-lg px-3 py-2 outline outline-2 outline-white/10"
           >
             <TechIcon component={iconType} />
