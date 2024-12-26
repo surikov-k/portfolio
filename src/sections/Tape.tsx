@@ -19,9 +19,19 @@ export const TapeSection = () => {
     <section className="overflow-x-clip py-16 lg:py-24">
       <div className="-mx-1 -rotate-3 bg-gradient-to-r from-emerald-300 to-sky-400">
         <div className="flex [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          <div className="flex flex-none gap-4 py-3">
-            {words.map((word) => (
-              <div key={word} className="inline-flex items-center gap-4">
+          <div
+            className="animate-move-left flex flex-none -translate-x-1/2 gap-4 py-3 pr-4 [animation-duration:30s]"
+            style={
+              {
+                // transform: "translateX(-50%)",
+              }
+            }
+          >
+            {[...words, ...words].map((word, index) => (
+              <div
+                key={word + index}
+                className="inline-flex items-center gap-4"
+              >
                 <span className="text-sm font-extrabold uppercase text-gray-900">
                   {word}
                 </span>
